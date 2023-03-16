@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_measures_fragment"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_gravity="center"
+    android:background="@color/background"
+    android:orientation="horizontal"
+    tools:context="fragments.MeasuresFragment">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/calculator_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?actionBarSize"
+        android:background="@color/background">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/cl_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="15dp"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/b_calculator"
+                style="@style/ActionBarButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/calc_button_unpressed"
+                app:layout_constraintEnd_toStartOf="@+id/b_measures"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                tools:ignore="MissingConstraints">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/b_measures"
+                style="@style/ActionBarButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_measure_pressed"
+                app:layout_constraintEnd_toStartOf="@+id/b_finance"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/b_calculator"
+                tools:ignore="MissingConstraints">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/b_finance"
+                style="@style/ActionBarButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/finance"
+                app:layout_constraintEnd_toStartOf="@+id/b_history"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/b_measures"
+                tools:ignore="MissingConstraints">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/b_history"
+                style="@style/ActionBarButtons"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_history"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/b_finance"
+                tools:ignore="MissingConstraints">
+
+            </ImageButton>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/calculator_toolbar"
+        android:layout_marginTop="50dp">
+
+        <LinearLayout
+            android:id="@+id/ll_first_row"
+            android:gravity="center_horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <ImageButton
+                android:id="@+id/ib_length"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@drawable/measures_length_button"
+                android:cropToPadding="false"
+                android:padding="20dp"
+                android:scaleType="fitCenter">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/ib_temperature"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@drawable/measures_temp_button"
+                android:cropToPadding="false"
+                android:padding="20dp"
+                android:layout_marginLeft="50dp"
+                android:layout_marginRight="50dp"
+                android:scaleType="fitCenter">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/ib_square"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@drawable/measures_square_button"
+                android:cropToPadding="false"
+                android:padding="20dp"
+                android:scaleType="fitCenter">
+            </ImageButton>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:gravity="center_horizontal"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/ll_first_row">
+
+            <ImageButton
+                android:id="@+id/ib_time"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:layout_marginRight="175dp"
+                android:background="@drawable/measures_time_button"
+                android:cropToPadding="false"
+                android:padding="20dp"
+                android:scaleType="fitCenter">
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/ib_discount"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:adjustViewBounds="true"
+                android:background="@drawable/measures_discount_button"
+                android:cropToPadding="false"
+                android:padding="20dp"
+                android:scaleType="fitCenter">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+
+    </RelativeLayout>
+
+</RelativeLayout>
