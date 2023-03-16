@@ -22,8 +22,8 @@ public class FinanceFragment extends Fragment implements View.OnClickListener {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_finance, container, false);
-        initializeViewElements();
-        setListener();
+//        initializeViewElements();
+//        setListener();
         return view;
     }
 

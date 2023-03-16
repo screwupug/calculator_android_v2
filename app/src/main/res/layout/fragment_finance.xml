@@ -7,78 +7,10 @@
     android:background="@color/background"
     tools:context="fragments.FinanceFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/calculator_toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="?actionBarSize"
-        android:background="@color/background">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:id="@+id/cl_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginRight="15dp"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/b_calculator"
-                style="@style/ActionBarButtons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/calc_button_unpressed"
-                app:layout_constraintEnd_toStartOf="@+id/b_measures"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toStartOf="parent"
-                tools:ignore="MissingConstraints">
-
-            </ImageButton>
-
-            <ImageButton
-                android:id="@+id/b_measures"
-                style="@style/ActionBarButtons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/measure"
-                app:layout_constraintEnd_toStartOf="@+id/b_finance"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/b_calculator"
-                tools:ignore="MissingConstraints">
-
-            </ImageButton>
-
-            <ImageButton
-                android:id="@+id/b_finance"
-                style="@style/ActionBarButtons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_finace_pressed"
-                app:layout_constraintEnd_toStartOf="@+id/b_history"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/b_measures"
-                tools:ignore="MissingConstraints">
-
-            </ImageButton>
-
-            <ImageButton
-                android:id="@+id/b_history"
-                style="@style/ActionBarButtons"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/button_history"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.5"
-                app:layout_constraintStart_toEndOf="@+id/b_finance"
-                tools:ignore="MissingConstraints">
-
-            </ImageButton>
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </androidx.appcompat.widget.Toolbar>
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/calculator_toolbar"
         android:layout_marginTop="50dp">
 
         <LinearLayout
