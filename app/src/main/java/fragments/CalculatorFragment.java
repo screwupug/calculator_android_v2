@@ -342,8 +342,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         checkSize();
         if (result.equals("Ошибка") || result.equals("На ноль делить нельзя!")) {
             restoreState = true;
-        }
-        if (expression.length() != 0) {
+        } else if (expression.length() != 0) {
             dbHelper.insertDataInExpressions(expression, result);
             dbHelper.close();
         }

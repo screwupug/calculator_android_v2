@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/roboto_thin"
             android:gravity="center"
-            android:text="Выберите валюту"
+            android:text="@string/recycler_view_dialog_title"
             android:textSize="35sp">
 
         </TextView>

@@ -18,7 +18,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="История"
+            android:text="@string/history_title"
             android:textColor="@color/inputFieldTextColor"
             android:fontFamily="@font/roboto_thin"
             android:textSize="30sp"

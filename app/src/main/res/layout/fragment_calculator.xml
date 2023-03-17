@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/rl_buttons_frame"
         android:fontFamily="@font/roboto_thin"
-        android:hint="0"
+        android:hint="@string/hint"
         android:paddingLeft="10dp"
         android:paddingRight="10dp"
         android:scrollbars="horizontal"
@@ -72,14 +72,9 @@
 
             <ImageButton
                 android:id="@+id/b_clear"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_c_anim"
                 android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_delete"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -87,14 +82,8 @@
 
             <ImageButton
                 android:id="@+id/b_delete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_delete_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_percent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_clear" />
@@ -102,28 +91,16 @@
 
             <ImageButton
                 android:id="@+id/b_percent"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_percent_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_division"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_delete" />
 
             <ImageButton
                 android:id="@+id/b_division"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_divide_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_percent" />
@@ -139,14 +116,8 @@
 
             <ImageButton
                 android:id="@+id/b_seven"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_seven_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_eight"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -154,42 +125,24 @@
 
             <ImageButton
                 android:id="@+id/b_eight"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_eight_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_nine"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_seven" />
 
             <ImageButton
                 android:id="@+id/b_nine"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_nine_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_multiply"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_eight" />
 
             <ImageButton
                 android:id="@+id/b_multiply"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_multiply_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_nine" />
@@ -205,14 +158,8 @@
 
             <ImageButton
                 android:id="@+id/b_four"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_four_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_five"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -220,42 +167,24 @@
 
             <ImageButton
                 android:id="@+id/b_five"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_five_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_six"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_four" />
 
             <ImageButton
                 android:id="@+id/b_six"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_six_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_minus"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_five" />
 
             <ImageButton
                 android:id="@+id/b_minus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_minus_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_six" />
@@ -272,14 +201,8 @@
 
             <ImageButton
                 android:id="@+id/b_one"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_one_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_two"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -287,42 +210,26 @@
 
             <ImageButton
                 android:id="@+id/b_two"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_two_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_three"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_one" />
 
             <ImageButton
                 android:id="@+id/b_three"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_three_anim"
                 android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_plus"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_two" />
 
             <ImageButton
                 android:id="@+id/b_plus"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_plus_anim"
                 android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_three" />
@@ -338,14 +245,8 @@
 
             <ImageButton
                 android:id="@+id/b_change_view"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_change_view_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_zero"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintHorizontal_chainStyle="spread_inside"
@@ -353,42 +254,25 @@
 
             <ImageButton
                 android:id="@+id/b_zero"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_zero_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_comma"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_change_view" />
 
             <ImageButton
                 android:id="@+id/b_comma"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_comma_anim"
                 android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toStartOf="@+id/b_result"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_zero" />
 
             <ImageButton
                 android:id="@+id/b_result"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center_horizontal"
-                android:adjustViewBounds="true"
+                style="@style/calc_buttons"
                 android:background="@drawable/button_equal_anim"
-                android:cropToPadding="false"
-                android:padding="20dp"
-                android:scaleType="fitCenter"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.5"
                 app:layout_constraintStart_toEndOf="@+id/b_comma" />

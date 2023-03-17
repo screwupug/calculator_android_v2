@@ -6,12 +6,7 @@
 
     <TextView
         android:id="@+id/tv_choose_item"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/roboto"
-        android:textColor="@color/black"
-        android:textSize="35sp"
-        android:layout_marginLeft="25dp">
+        style="@style/choose_dialog_items">
     </TextView>
 
 </LinearLayout>
