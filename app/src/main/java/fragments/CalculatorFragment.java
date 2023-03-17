@@ -1,6 +1,9 @@
-package com.example.calculator;
+package fragments;
+
+import static androidx.core.content.ContextCompat.getSystemService;
 
 import android.annotation.SuppressLint;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -9,10 +12,12 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
+import android.os.Vibrator;
 import android.text.Spannable;
 import android.text.SpannableString;
 import android.text.method.ScrollingMovementMethod;
 import android.text.style.ForegroundColorSpan;
+import android.view.HapticFeedbackConstants;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,6 +25,7 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import com.example.activities.HistoryActivity;
+import com.example.calculator.R;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -40,15 +46,13 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     private Calculator calculator = new Calculator();
     private ImageButton one, two, three, four, five, six, seven, eight, nine, zero,
             multiply, minus, clear, comma, division, delete, plus, percent, result,
-            changeView, history, pi, factorial, leftBracket, rightBracket, root,
-            exponent, measures, finance;
+            changeView, pi, factorial, leftBracket, rightBracket, root,
+            exponent;
 
     private final String PI_NUMBER = "3.14159265";
 
     private ConstraintLayout extraButtons;
 
-
-    private Fragment measuresFragment, financeFragment;
     private boolean isClicked;
 
     private boolean restoreState;
@@ -78,6 +82,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         int id = view.getId();
 
         String resultFieldExpression = resultField.getText().toString();
+        view.performHapticFeedback(HapticFeedbackConstants.VIRTUAL_KEY);
 
         if (id == R.id.b_one) {
             addDigit("1");
@@ -138,12 +143,10 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
                 extraButtons.setVisibility(View.GONE);
                 isClicked = false;
             }
+        } else if (id == R.id.b_root) {
+            resultField.append("√");
+            inputField.setText(null);
         }
-//        else if (id == R.id.b_measures) {
-//            engageFragment(measuresFragment);
-//        } else if (id == R.id.b_finance) {
-//            engageFragment(financeFragment);
-//        }
     }
 
 
@@ -393,7 +396,6 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         delete = view.findViewById(R.id.b_delete);
         comma = view.findViewById(R.id.b_comma);
         result = view.findViewById(R.id.b_result);
-        history = view.findViewById(R.id.b_history);
         changeView = view.findViewById(R.id.b_change_view);
         extraButtons = view.findViewById(R.id.extra_buttons);
         pi = view.findViewById(R.id.b_pi);
@@ -402,10 +404,6 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
         rightBracket = view.findViewById(R.id.b_right_bracket);
         root = view.findViewById(R.id.b_root);
         exponent = view.findViewById(R.id.b_exponent);
-        measures = view.findViewById(R.id.b_measures);
-        finance = view.findViewById(R.id.b_finance);
-        measuresFragment = new MeasuresFragment();
-        financeFragment = new FinanceFragment();
     }
 
     private void setListener() {

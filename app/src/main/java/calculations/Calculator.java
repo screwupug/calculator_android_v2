@@ -2,6 +2,7 @@ package calculations;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.text.NumberFormat;
 import java.util.EmptyStackException;
 import java.util.Locale;
@@ -21,24 +22,28 @@ public class Calculator {
         int pos = 0;
         while (pos < expression.length) {
             if (Character.isDigit(expression[pos]) && pos != expression.length - 1) {
-                if (Character.isDigit(expression[pos + 1]) || expression[pos + 1] == '.') {
+                if (Character.isDigit(expression[pos + 1]) || expression[pos + 1] == '.'
+                        || expression[pos + 1] == 'E') {
                     result.append(expression[pos]);
                 } else {
                     result.append(expression[pos]).append(" ");
                 }
             } else if (expression[pos] == '÷') {
                 result.append('/').append(" ");
-            } else if(expression[pos] == '×') {
+            } else if (expression[pos] == '×') {
                 result.append('*').append(" ");
             } else if (expression[pos] == '.') {
                 result.append(expression[pos]);
             } else if (expression[pos] == 'π') {
                 result.append(PI_NUMBER);
+            } else if (expression[pos] == 'E') {
+                result.append(expression[pos]);
             } else {
                 result.append(expression[pos]).append(" ");
             }
             pos++;
         }
+        System.out.println(result);
         return result.toString();
     }
 
@@ -47,7 +52,7 @@ public class Calculator {
         StringBuilder result = new StringBuilder();
         String[] expression = input.split(" ");
         for (String c : expression) {
-            if (isDigit(c) || c.equals("!")) {
+            if (isDigit(c) || c.equals("!") || c.equals("E")) {
                 result.append(c).append(" ");
             } else {
                 if (lexemes.size() > 0 && !c.equals("(")) {
@@ -103,6 +108,8 @@ public class Calculator {
                 return 2;
             case "^":
                 return 3;
+            case "√":
+                return 4;
             default:
                 return -1;
         }
@@ -152,10 +159,10 @@ public class Calculator {
                             break;
                         }
                         case "!": {
-                                double a = numbers.pop();
-                                result = getFactorial(a);
-                                numbers.add(result);
-                                break;
+                            double a = numbers.pop();
+                            result = getFactorial(a);
+                            numbers.add(result);
+                            break;
                         }
                         case "^": {
                             double a = numbers.pop();
@@ -164,6 +171,11 @@ public class Calculator {
                             numbers.add(result);
                             break;
                         }
+                        case "√":
+                            double a = numbers.pop();
+                            result = Math.sqrt(a);
+                            numbers.add(result);
+                            break;
                         default:
                             return "Ошибка";
                     }
@@ -176,7 +188,6 @@ public class Calculator {
         if (isNoOperators && !numbers.isEmpty()) {
             result = numbers.pop();
         }
-        System.out.println(result);
         return formatInput(result);
     }
 
@@ -188,23 +199,20 @@ public class Calculator {
         }
     }
 
-    // Переделать!!!!!
     private String formatInput(double result) {
+        String res = Double.toString(result);
+        System.out.println(res);
         int size = Double.toString(result).length();
-        if (result % 1 == 0) {
-            if (size >= 10 || Double.toString(result).contains("E")) {
-                return String.format(Locale.ENGLISH, "%.2e", result);
-            } else {
-                return String.format(Locale.US, "%,.0f", result).replaceAll(",", " ");
-            }
+        DecimalFormatSymbols otherSymbols = new DecimalFormatSymbols(Locale.getDefault());
+        otherSymbols.setDecimalSeparator('.');
+        if (size > 20 || res.contains("E")) {
+            return new DecimalFormat("0.000E00", otherSymbols).format(result);
         } else {
-            if (size >= 20) {
-                return String.format(Locale.ENGLISH, "%.2e", result);
-            } else {
-                NumberFormat nf = new DecimalFormat("#.######");
-                return nf.format(result);
-            }
+
+            NumberFormat nf = new DecimalFormat("#.####", otherSymbols);
+            return nf.format(result);
         }
+
     }
 
     public String calculatePercent(String input) {
@@ -215,7 +223,6 @@ public class Calculator {
         } catch (Exception e) {
             return "Ошибка";
         }
-        System.out.println(result);
         return formatInput(result);
     }
 }

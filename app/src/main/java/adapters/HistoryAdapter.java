@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.text.Spannable;
 import android.text.SpannableString;
-import android.text.method.ScrollingMovementMethod;
 import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -53,7 +52,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
     private void insertDataInColors(int position, HistoryViewHolder holder) {
         char[] line = expressions.get(position).toCharArray();
         for (Character element : line) {
-            if (Character.isDigit(element) || element == '.') {
+            if (Character.isDigit(element) || element == '.' || element == 'E') {
                 holder.listItemExpressionView.append(String.valueOf(element));
             } else {
                 holder.listItemExpressionView.append(changeColor(String.valueOf(element)));

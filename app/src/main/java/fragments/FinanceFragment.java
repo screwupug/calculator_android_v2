@@ -14,46 +14,41 @@ import com.example.calculator.R;
 public class FinanceFragment extends Fragment implements View.OnClickListener {
 
     View view;
-    ImageButton calc, measures;
-    Fragment measuresFragment;
+    ImageButton currency;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         view = inflater.inflate(R.layout.fragment_finance, container, false);
-//        initializeViewElements();
-//        setListener();
+        initializeViewElements();
+        setListener();
         return view;
     }
 
     @Override
     public void onClick(View view) {
         int id = view.getId();
-        if (id == R.id.b_calculator) {
-            getActivity().onBackPressed();
+        if (id == R.id.ib_currency) {
+            engageFragment(new CurrencyFragment());
         }
-        if (id == R.id.b_measures) {
-            engageFragment();
-        }
+
     }
 
     private void initializeViewElements() {
-        calc = view.findViewById(R.id.b_calculator);
-        measures = view.findViewById(R.id.b_measures);
-        measuresFragment = new MeasuresFragment();
+        currency = view.findViewById(R.id.ib_currency);
     }
 
     private void setListener() {
-        calc.setOnClickListener(this);
-        measures.setOnClickListener(this);
+        currency.setOnClickListener(this);
     }
 
-    private void engageFragment() {
+    private void engageFragment(Fragment fragment) {
         getActivity()
                 .getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.rl_finance_frame, measuresFragment)
+                .replace(R.id.rl_main_frame, fragment)
+                .addToBackStack(null)
                 .commit();
     }
 }

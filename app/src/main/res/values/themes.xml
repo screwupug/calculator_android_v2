@@ -29,4 +29,9 @@
         <item name="android:background">@drawable/delete_dialog_background</item>
     </style>
 
+    <style name="text">
+        <item name="fontFamily">@font/roboto_thin</item>
+        <item name="android:fontFamily">@font/roboto_thin</item>
+    </style>
+
 </resources>
