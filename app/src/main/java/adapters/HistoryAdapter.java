@@ -18,9 +18,9 @@ import com.example.calculator.R;
 import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
-    private Context context;
-    private List<String> expressions;
-    private List<String> results;
+    private final Context context;
+    private final List<String> expressions;
+    private final List<String> results;
 
 
     public HistoryAdapter(Context context, List<String> expressions, List<String> results) {
@@ -100,6 +100,7 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
                     Intent intent = new Intent(context, MainActivity.class);
                     intent.putExtra(Intent.EXTRA_TEXT, listItemResultView.getText().toString());
                     context.startActivity(intent);
+                    context.stopService(intent);
 
                 }
             });

@@ -43,7 +43,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
     private TextView inputField;
 
     private TextView resultField;
-    private Calculator calculator = new Calculator();
+    private final Calculator calculator = new Calculator();
     private ImageButton one, two, three, four, five, six, seven, eight, nine, zero,
             multiply, minus, clear, comma, division, delete, plus, percent, result,
             changeView, pi, factorial, leftBracket, rightBracket, root,
@@ -57,7 +57,7 @@ public class CalculatorFragment extends Fragment implements View.OnClickListener
 
     private boolean restoreState;
 
-    private List<Character> operators = new ArrayList<>(Arrays.asList('+', '-', '×', '÷', '.'));
+    private final List<Character> operators = new ArrayList<>(Arrays.asList('+', '-', '×', '÷', '.'));
 
     DBHelper dbHelper;
 

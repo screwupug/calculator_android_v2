@@ -10,7 +10,7 @@ import java.util.List;
 // adapter for scrolling
 public class MyPagerAdapter extends FragmentStateAdapter {
 
-    private List<Fragment> fragments = new ArrayList<>();
+    private final List<Fragment> fragments = new ArrayList<>();
 
     public MyPagerAdapter(@NonNull FragmentActivity fragmentActivity) {
         super(fragmentActivity);

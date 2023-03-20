@@ -23,9 +23,9 @@ import currencies.Currencies;
 
 public class ChooseBottomSheetFragment extends BottomSheetDialogFragment {
 
-    private onClickItem listener;
+    private final onClickItem listener;
 
-    private List<Currencies> items;
+    private final List<Currencies> items;
 
     public ChooseBottomSheetFragment(List<Currencies> items, onClickItem listener) {
         this.items = items;
@@ -63,8 +63,8 @@ public class ChooseBottomSheetFragment extends BottomSheetDialogFragment {
     }
 
     public class ChooseRecyclerViewAdapter extends RecyclerView.Adapter<ChooseRecyclerViewAdapter.ChooseRecyclerViewHolder> {
-        private List<Currencies> items;
-        private onClickItem listener;
+        private final List<Currencies> items;
+        private final onClickItem listener;
 
         public ChooseRecyclerViewAdapter(List<Currencies> items, onClickItem listener) {
             this.items = items;
@@ -99,7 +99,7 @@ public class ChooseBottomSheetFragment extends BottomSheetDialogFragment {
         }
 
         class ChooseRecyclerViewHolder extends RecyclerView.ViewHolder {
-            private TextView item;
+            private final TextView item;
 
             public ChooseRecyclerViewHolder(@NonNull View itemView) {
                 super(itemView);

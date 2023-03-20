@@ -1,11 +1,11 @@
 package currencies;
 
 public class Controller {
-    private JsonReader reader;
+    private final JsonReader reader;
     private Currency currencyFrom;
     private Currency currencyTo;
 
-    private Calculations calculations;
+    private final Calculations calculations;
 
     public Controller(JsonReader reader, Calculations calculations) {
         this.reader = reader;
@@ -34,11 +34,7 @@ public class Controller {
 
     public boolean setCurrencyTo(Currency currencyTo) {
         this.currencyTo = currencyTo;
-        if (reader.getCurrencyValue(currencyTo)) {
-            return true;
-        } else {
-            return false;
-        }
+        return reader.getCurrencyValue(currencyTo);
     }
 
     public String currencyFromFieldUpdated() {
